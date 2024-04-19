@@ -22,6 +22,11 @@ public class FirstPersonCamera : MonoBehaviour
         Camera.main.transform.rotation = newRotation;
     }
 
+    private void OnDisable()
+    {
+        Cursor.lockState= CursorLockMode.None;
+    }
+
     public void AddXAxisInput(float input)
     {
         xAxis -= input * xAxisTurnRate;
